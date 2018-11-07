@@ -13,8 +13,8 @@ namespace WEB.Controllers
 {
     //[Route("api/[controller]")]
     [ApiVersion("2.0")]
+    [Route("api/{version:apiVersion}/companies")]
     [Authorize(Roles = "User")]
-    [Route("api/{version:apiVersion}/[controller]")]
     [ApiController]
     public class CompaniesController : Controller
     {

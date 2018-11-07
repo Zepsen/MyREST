@@ -1,0 +1,150 @@
+2018-11-07 10:44:31.602 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:44:33.022 +02:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:8091/  0
+2018-11-07 10:44:33.039 +02:00 [INF] Request finished in 16.8146ms 200 
+2018-11-07 10:46:21.442 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:46:22.672 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/values  
+2018-11-07 10:46:22.818 +02:00 [WRN] Failed to determine the https port for redirect.
+2018-11-07 10:46:23.390 +02:00 [INF] Request finished in 721.371ms 404 
+2018-11-07 10:46:33.134 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:54709/api/account/login application/json 71
+2018-11-07 10:46:33.205 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing action WEB.Controllers.AccountController.Login (WEB)
+2018-11-07 10:46:33.514 +02:00 [INF] Executing action method WEB.Controllers.AccountController.Login (WEB) with arguments (["WEB.Models.LoginModel"]) - Validation state: "Valid"
+2018-11-07 10:46:33.737 +02:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-07 10:46:34.205 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2018-11-07 10:46:34.397 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2018-11-07 10:46:34.446 +02:00 [INF] Executed action method WEB.Controllers.AccountController.Login (WEB), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 915.2704ms.
+2018-11-07 10:46:34.462 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IList`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-11-07 10:46:34.492 +02:00 [INF] Executed action WEB.Controllers.AccountController.Login (WEB) in 1282.3082000000002ms
+2018-11-07 10:46:34.502 +02:00 [INF] Request finished in 1367.423ms 200 application/json; charset=utf-8
+2018-11-07 10:47:12.279 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:47:12.343 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters) in C:\agent2\_work\56\s\src\Microsoft.IdentityModel.Tokens\Validators.cs:line 274
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters) in C:\agent2\_work\56\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 1178
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters) in C:\agent2\_work\56\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 735
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken) in C:\agent2\_work\56\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 719
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-07 10:47:12.420 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+2018-11-07 10:47:12.421 +02:00 [INF] Request finished in 141.8092ms 404 
+2018-11-07 10:47:54.761 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:47:54.797 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:47:54.799 +02:00 [INF] Request finished in 38.4604ms 404 
+2018-11-07 10:48:13.747 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:48:13.754 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:48:13.756 +02:00 [INF] Request finished in 9.0777ms 404 
+2018-11-07 10:48:21.245 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/companies application/json 
+2018-11-07 10:48:21.251 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:48:21.253 +02:00 [INF] Request finished in 8.9682ms 404 
+2018-11-07 10:48:59.575 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:48:59.620 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:48:59.622 +02:00 [INF] Request finished in 47.1894ms 404 
+2018-11-07 10:49:12.823 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:12.826 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:12.827 +02:00 [INF] Request finished in 4.0961ms 404 
+2018-11-07 10:49:29.911 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:29.921 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:29.923 +02:00 [INF] Request finished in 12.4217ms 404 
+2018-11-07 10:49:32.095 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v3/companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:32.098 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:32.099 +02:00 [INF] Request finished in 4.0133ms 404 
+2018-11-07 10:49:33.750 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:33.755 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:33.756 +02:00 [INF] Request finished in 5.6784ms 404 
+2018-11-07 10:49:36.126 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:36.132 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:36.134 +02:00 [INF] Request finished in 7.8128ms 404 
+2018-11-07 10:49:47.004 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/Companies?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:47.007 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:47.010 +02:00 [INF] Request finished in 5.3308ms 404 
+2018-11-07 10:49:50.182 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/users?orderby=Id,Name%20ASC application/json 
+2018-11-07 10:49:50.184 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:49:50.194 +02:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing action WEB.Controllers.UsersController.Get (WEB)
+2018-11-07 10:49:50.206 +02:00 [INF] Authorization was successful.
+2018-11-07 10:49:50.208 +02:00 [INF] Authorization was successful.
+2018-11-07 10:49:50.239 +02:00 [INF] Executing action method WEB.Controllers.UsersController.Get (WEB) with arguments (["BLL.Infrastructure.Filters.FilterBase"]) - Validation state: "Valid"
+2018-11-07 10:49:50.271 +02:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-07 10:49:50.388 +02:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Name], [u].[UserIdentityId]
+FROM [Users] AS [u]
+2018-11-07 10:49:50.432 +02:00 [INF] Executed action method WEB.Controllers.UsersController.Get (WEB), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 188.5532ms.
+2018-11-07 10:49:50.435 +02:00 [INF] Executing ObjectResult, writing value of type 'BLL.Infrastructure.Result`1[[BLL.DTOs.UserDto, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-07 10:49:50.441 +02:00 [INF] Executed action WEB.Controllers.UsersController.Get (WEB) in 245.0808ms
+2018-11-07 10:49:50.445 +02:00 [INF] Request finished in 262.6325ms 200 application/json; charset=utf-8
+2018-11-07 10:51:31.618 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:51:32.159 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/users  
+2018-11-07 10:51:32.230 +02:00 [WRN] Failed to determine the https port for redirect.
+2018-11-07 10:51:32.469 +02:00 [INF] Request finished in 311.7667ms 404 
+2018-11-07 10:51:33.103 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/values  
+2018-11-07 10:51:33.143 +02:00 [INF] Request finished in 40.5476ms 404 
+2018-11-07 10:51:37.621 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/users  
+2018-11-07 10:51:37.624 +02:00 [INF] Request finished in 3.0481ms 404 
+2018-11-07 10:51:44.822 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v1/users  
+2018-11-07 10:51:44.832 +02:00 [INF] Request finished in 9.863ms 404 
+2018-11-07 10:52:01.557 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/users  
+2018-11-07 10:52:01.559 +02:00 [INF] Request finished in 2.1474ms 404 
+2018-11-07 10:52:04.831 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/users  
+2018-11-07 10:52:04.832 +02:00 [INF] Request finished in 1.3396ms 404 
+2018-11-07 10:52:09.891 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/users  
+2018-11-07 10:52:09.894 +02:00 [INF] Request finished in 2.7392ms 404 
+2018-11-07 10:52:13.472 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/users  
+2018-11-07 10:52:13.475 +02:00 [INF] Request finished in 2.6412ms 404 
+2018-11-07 10:52:14.475 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/users  
+2018-11-07 10:52:14.477 +02:00 [INF] Request finished in 1.786ms 404 
+2018-11-07 10:53:47.099 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:53:48.245 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/values  
+2018-11-07 10:53:48.348 +02:00 [WRN] Failed to determine the https port for redirect.
+2018-11-07 10:53:48.549 +02:00 [INF] Request finished in 306.476ms 404 
+2018-11-07 10:53:56.728 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/companies  
+2018-11-07 10:53:56.735 +02:00 [INF] Request finished in 7.5345ms 404 
+2018-11-07 10:54:00.820 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v1/companies  
+2018-11-07 10:54:00.822 +02:00 [INF] Request finished in 2.512ms 404 
+2018-11-07 10:54:10.296 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/users application/json 
+2018-11-07 10:54:10.432 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:54:10.490 +02:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing action WEB.Controllers.UsersController.Get (WEB)
+2018-11-07 10:54:10.501 +02:00 [INF] Authorization was successful.
+2018-11-07 10:54:10.503 +02:00 [INF] Authorization was successful.
+2018-11-07 10:54:10.700 +02:00 [INF] Executing action method WEB.Controllers.UsersController.Get (WEB) with arguments (["BLL.Infrastructure.Filters.FilterBase"]) - Validation state: "Valid"
+2018-11-07 10:54:10.931 +02:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-07 10:54:11.243 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Name], [u].[UserIdentityId]
+FROM [Users] AS [u]
+2018-11-07 10:54:11.301 +02:00 [INF] Executed action method WEB.Controllers.UsersController.Get (WEB), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 585.5682ms.
+2018-11-07 10:54:11.317 +02:00 [INF] Executing ObjectResult, writing value of type 'BLL.Infrastructure.Result`1[[BLL.DTOs.UserDto, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-07 10:54:11.347 +02:00 [INF] Executed action WEB.Controllers.UsersController.Get (WEB) in 852.87690000000009ms
+2018-11-07 10:54:11.358 +02:00 [INF] Request finished in 1062.078ms 200 application/json; charset=utf-8
+2018-11-07 10:54:18.676 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:54:18.678 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:54:18.680 +02:00 [INF] Request finished in 3.843ms 404 
+2018-11-07 10:54:44.448 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:54:45.662 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/values  
+2018-11-07 10:54:45.768 +02:00 [WRN] Failed to determine the https port for redirect.
+2018-11-07 10:54:45.966 +02:00 [INF] Request finished in 307.6313ms 404 
+2018-11-07 10:54:49.706 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/companies application/json 
+2018-11-07 10:54:49.841 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:54:49.843 +02:00 [INF] Request finished in 136.9554ms 404 
+2018-11-07 10:54:56.007 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/v2/companies application/json 
+2018-11-07 10:54:56.009 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:54:56.019 +02:00 [INF] Request finished in 12.0185ms 404 
+2018-11-07 10:56:05.302 +02:00 [INF] User profile is available. Using 'C:\Users\ZepsenWork\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-07 10:56:06.600 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/values  
+2018-11-07 10:56:06.727 +02:00 [WRN] Failed to determine the https port for redirect.
+2018-11-07 10:56:06.944 +02:00 [INF] Request finished in 344.6849ms 404 
+2018-11-07 10:56:15.279 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:54709/api/2.0/companies application/json 
+2018-11-07 10:56:15.408 +02:00 [INF] Successfully validated the token.
+2018-11-07 10:56:15.473 +02:00 [INF] Route matched with {action = "Get", controller = "Companies"}. Executing action WEB.Controllers.CompaniesController.Get (WEB)
+2018-11-07 10:56:15.488 +02:00 [INF] Authorization was successful.
+2018-11-07 10:56:15.682 +02:00 [INF] Executing action method WEB.Controllers.CompaniesController.Get (WEB) with arguments (["BLL.Infrastructure.Filters.FilterBase"]) - Validation state: "Valid"
+2018-11-07 10:56:15.904 +02:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-07 10:56:16.277 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [dtoCompany].[Code], [dtoCompany].[Id], [dtoCompany].[Name], [dtoCompany].[Test]
+FROM [Companies] AS [dtoCompany]
+2018-11-07 10:56:16.312 +02:00 [INF] Executed action method WEB.Controllers.CompaniesController.Get (WEB), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 606.45850000000007ms.
+2018-11-07 10:56:16.326 +02:00 [INF] Executing ObjectResult, writing value of type 'BLL.Infrastructure.Result`1[[BLL.DTOs.CompanyDto, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-07 10:56:16.356 +02:00 [INF] Executed action WEB.Controllers.CompaniesController.Get (WEB) in 876.82ms
+2018-11-07 10:56:16.360 +02:00 [INF] Request finished in 1080.9869ms 200 application/json; charset=utf-8
